@@ -40,7 +40,7 @@ class MainActivity : ComponentActivity() {
             DisplayProduct(prod,
                  modifier =  Modifier.padding(10.dp)
             ) {
-                GlobalScope.launch {
+                mainViewModel.viewModelScope.launch {
                     addProduct(prod)
                 }
             }

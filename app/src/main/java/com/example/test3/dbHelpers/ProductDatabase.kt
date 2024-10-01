@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import kotlin.coroutines.coroutineContext
 
-@Database(entities = [ProductDb::class], version = 1)
+@Database(entities = [ProductDb::class], version = 1, exportSchema = false)
 abstract class ProductDatabase : RoomDatabase() {
 
     abstract fun productDao(): ProductDao

@@ -13,6 +13,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import com.example.test3.dbHelpers.ProductDatabase
 import com.example.test3.dbHelpers.ProductDb
 import com.example.test3.models.AllProducts
@@ -30,7 +31,7 @@ class MainActivity : ComponentActivity() {
         productRepository = ProductRepository(productApi, applicationContext, productDatabase)
         mainViewModel  = ViewModelProvider(this, MainViewModelFactory(productRepository))[MainViewModel::class.java]
 
-        GlobalScope.launch {
+        mainViewModel.viewModelScope.launch {
             productDatabase.productDao().insertProduct(ProductDb(0,"Hye","GM"))
         }
 

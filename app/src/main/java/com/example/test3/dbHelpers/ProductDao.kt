@@ -21,6 +21,6 @@ interface ProductDao {
     suspend fun deleteProduct(productDb: ProductDb)
 
     @Query("Select * from product")
-    fun getDbProduct(): StateFlow<ProductDb>
+    fun getDbProduct(): ProductDb
 
 }

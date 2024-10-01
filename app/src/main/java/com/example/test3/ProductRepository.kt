@@ -35,7 +35,8 @@ class ProductRepository(
                         _allProducts.emit(result.body()!!)
                     }
                 }else{
-                   val list = productDatabase.productDao().getDbProduct().value
+                   val list = productDatabase.productDao().getDbProduct()
+                  //  val ll  : ProductDb = list
                     _allDbProducts.value = list
                 }
             }

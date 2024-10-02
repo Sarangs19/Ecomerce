@@ -17,9 +17,10 @@ import androidx.lifecycle.viewModelScope
 import com.example.test3.dbHelpers.ProductDatabase
 import com.example.test3.dbHelpers.ProductDb
 import com.example.test3.models.AllProducts
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private lateinit var mainViewModel : MainViewModel
     private lateinit var productRepository : ProductRepository
